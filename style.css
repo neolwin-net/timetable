@@ -839,3 +839,20 @@ html.light input:focus-visible {
   outline-color: #0969da;
 }
 
+/* Let the centered watermark show through the two main content cards. */
+.onedrive-card {
+  background: rgba(22, 27, 34, 0.56);
+}
+
+.schedule-panel {
+  background: rgba(22, 27, 34, 0.56);
+}
+
+html.light .onedrive-card {
+  background: rgba(255, 255, 255, 0.66);
+}
+
+html.light .schedule-panel {
+  background: rgba(255, 255, 255, 0.66);
+}
+
