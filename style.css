@@ -410,3 +410,53 @@ html.light .badge {
 html.light footer strong {
   color: #000000;
 }
+
+/* =========================================================
+   ACADEMIC PLAN CARD — MONOCHROME GLASS EFFECT
+   Styles only the card containing the ACADEMIC PLAN heading.
+========================================================= */
+.schedule-panel {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  -webkit-backdrop-filter: blur(22px) saturate(115%);
+  backdrop-filter: blur(22px) saturate(115%);
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.schedule-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.schedule-panel .panel-heading,
+.schedule-panel .controls,
+.schedule-panel .schedule {
+  position: relative;
+  z-index: 1;
+}
+
+/* Preserve the same monochrome glass treatment in light mode. */
+html.light .schedule-panel {
+  background: rgba(255, 255, 255, 0.68);
+  border-color: rgba(0, 0, 0, 0.24);
+  -webkit-backdrop-filter: blur(22px) saturate(110%);
+  backdrop-filter: blur(22px) saturate(110%);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+html.light .schedule-panel::before {
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.35), transparent);
+}
+
