@@ -856,3 +856,45 @@ html.light .schedule-panel {
   background: rgba(255, 255, 255, 0.66);
 }
 
+
+
+/* Current academic week indicator */
+.current-week-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin: 0 0 18px;
+  padding: 15px 18px;
+  border: 1px solid rgba(105, 217, 245, 0.28);
+  border-radius: 14px;
+  background: rgba(105, 217, 245, 0.08);
+}
+.current-week-label {
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+.current-week-dates {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+html.light .current-week-banner {
+  border-color: rgba(9, 105, 218, 0.24);
+  background: rgba(9, 105, 218, 0.06);
+}
+html.light .current-week-label {
+  color: #1f2328;
+}
+html.light .current-week-dates {
+  color: #59636e;
+}
+@media (max-width: 560px) {
+  .current-week-banner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
