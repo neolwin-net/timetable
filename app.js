@@ -75,7 +75,37 @@ const weeks = [
   }
 ];
 
-let selectedWeek = 0;
+const CYCLE_START = new Date(2026, 9, 26); // Monday, October 26, 2026 is Week 1
+const ordinalWords = ['1st', '2nd', '3rd', '4th'];
+
+function getCurrentWeekInfo(now = new Date()) {
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const monday = new Date(today);
+  monday.setDate(today.getDate() - ((today.getDay() + 6) % 7));
+  const sunday = new Date(monday);
+  sunday.setDate(monday.getDate() + 6);
+
+  const anchorUtc = Date.UTC(CYCLE_START.getFullYear(), CYCLE_START.getMonth(), CYCLE_START.getDate());
+  const mondayUtc = Date.UTC(monday.getFullYear(), monday.getMonth(), monday.getDate());
+  const elapsedWeeks = Math.floor((mondayUtc - anchorUtc) / (7 * 24 * 60 * 60 * 1000));
+  const weekIndex = ((elapsedWeeks % weeks.length) + weeks.length) % weeks.length;
+
+  const dateFormat = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric' });
+  const sameMonth = monday.getMonth() === sunday.getMonth();
+  const dateRange = sameMonth
+    ? `${dateFormat.format(monday)}–${sunday.getDate()}, ${sunday.getFullYear()}`
+    : `${dateFormat.format(monday)}–${dateFormat.format(sunday)}, ${sunday.getFullYear()}`;
+
+  return { weekIndex, dateRange };
+}
+
+function renderCurrentWeekBanner() {
+  const banner = document.getElementById('currentWeekBanner');
+  const { weekIndex, dateRange } = getCurrentWeekInfo();
+  banner.innerHTML = `<span class="current-week-label">This week is the ${ordinalWords[weekIndex]} week</span><span class="current-week-dates">${dateRange}</span>`;
+}
+
+let selectedWeek = getCurrentWeekInfo().weekIndex;
 const tabs = document.getElementById('weekTabs');
 const schedule = document.getElementById('schedule');
 const searchInput = document.getElementById('searchInput');
@@ -127,5 +157,6 @@ themeToggle.addEventListener('click', () => {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 document.documentElement.classList.remove('light');
+renderCurrentWeekBanner();
 renderTabs();
 renderSchedule();
