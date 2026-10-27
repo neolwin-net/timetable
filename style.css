@@ -157,3 +157,256 @@ html.light footer strong { color: #344054; }
   .tab { padding: 9px 11px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+
+
+/* =========================================================
+   HIGH-CONTRAST MONOCHROME THEME
+   Theme-only overrides. Layout, timetable data, and behavior
+   remain unchanged.
+========================================================= */
+:root {
+  color-scheme: dark;
+  --bg: #000000;
+  --panel: #080808;
+  --card: #111111;
+  --muted: #d0d0d0;
+  --text: #ffffff;
+  --border: #555555;
+  --accent: #ffffff;
+  --accent-strong: #ffffff;
+  --accent-soft: #242424;
+  --empty: #080808;
+}
+
+body {
+  color: #ffffff;
+  background: #000000;
+}
+
+body::before {
+  filter: grayscale(1) contrast(1.25);
+  opacity: 0.06;
+}
+
+.brand-mark,
+.onedrive-icon {
+  color: #ffffff;
+  background: #111111;
+  border: 1px solid #777777;
+}
+
+.eyebrow,
+.section-kicker {
+  color: #ffffff;
+}
+
+.icon-btn {
+  color: #ffffff;
+  background: #080808;
+  border-color: #666666;
+}
+
+.icon-btn:hover {
+  border-color: #ffffff;
+}
+
+.onedrive-card {
+  background: #080808;
+  border-color: #666666;
+  box-shadow: none;
+}
+
+.onedrive-card::before {
+  background: #ffffff;
+  opacity: 0.35;
+}
+
+.onedrive-copy p {
+  color: #e0e0e0;
+}
+
+.onedrive-button {
+  color: #000000;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  box-shadow: none;
+}
+
+.onedrive-button:hover {
+  filter: invert(1);
+  box-shadow: none;
+}
+
+.schedule-panel {
+  background: #050505;
+  border-color: #666666;
+  box-shadow: none;
+}
+
+.live-pill {
+  color: #ffffff;
+  border-color: #666666;
+}
+
+.live-dot {
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.tab {
+  color: #eeeeee;
+  background: #111111;
+  border-color: #666666;
+}
+
+.tab:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.tab.active {
+  color: #000000;
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.search {
+  color: #e0e0e0;
+}
+
+.search input {
+  color: #ffffff;
+  background: #000000;
+  border-color: #777777;
+}
+
+.search input::placeholder {
+  color: #c5c5c5;
+}
+
+.search input:focus {
+  border-color: #ffffff;
+}
+
+.day-title span,
+.room,
+.empty .subject,
+.empty .room,
+.no-results {
+  color: #d0d0d0;
+}
+
+.lesson {
+  background: #101010;
+  border-color: #555555;
+}
+
+.lesson:hover {
+  border-color: #ffffff;
+}
+
+.lesson.empty {
+  background: #050505;
+  border-style: dashed;
+  border-color: #666666;
+}
+
+.time {
+  color: #ffffff;
+}
+
+.subject {
+  color: #ffffff;
+}
+
+.badge {
+  color: #ffffff;
+  background: #262626;
+  border: 1px solid #666666;
+}
+
+footer {
+  color: #d0d0d0;
+  border-top-color: #444444;
+}
+
+footer strong {
+  color: #ffffff;
+}
+
+.onedrive-button:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* Keep the existing theme toggle functional, using monochrome in light mode too. */
+html.light {
+  color-scheme: light;
+  --bg: #ffffff;
+  --panel: #ffffff;
+  --card: #ffffff;
+  --muted: #333333;
+  --text: #000000;
+  --border: #777777;
+  --accent: #000000;
+  --accent-strong: #000000;
+  --accent-soft: #eeeeee;
+  --empty: #f5f5f5;
+}
+
+html.light body {
+  color: #000000;
+  background: #ffffff;
+}
+
+html.light .onedrive-card,
+html.light .schedule-panel,
+html.light .lesson,
+html.light .search input,
+html.light .tab {
+  color: #000000;
+  background: #ffffff;
+  border-color: #777777;
+}
+
+html.light .onedrive-copy p,
+html.light .day-title span,
+html.light .room,
+html.light .search,
+html.light .time,
+html.light .empty .subject,
+html.light .empty .room,
+html.light footer {
+  color: #222222;
+}
+
+html.light .brand-mark,
+html.light .onedrive-icon {
+  color: #000000;
+  background: #ffffff;
+  border-color: #777777;
+}
+
+html.light .tab.active {
+  color: #ffffff;
+  background: #000000;
+  border-color: #000000;
+}
+
+html.light .onedrive-button {
+  color: #ffffff;
+  background: #000000;
+  border-color: #000000;
+}
+
+html.light .badge {
+  color: #000000;
+  background: #eeeeee;
+  border-color: #777777;
+}
+
+html.light footer strong {
+  color: #000000;
+}
