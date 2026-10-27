@@ -460,3 +460,382 @@ html.light .schedule-panel::before {
   background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.35), transparent);
 }
 
+/* =========================================================
+   GITHUB-INSPIRED THEME — SITE-WIDE
+   GitHub Dark by default; GitHub Light remains available
+   through the existing theme toggle. Layout and functionality
+   are intentionally unchanged.
+========================================================= */
+:root {
+  color-scheme: dark;
+  --bg: #0d1117;
+  --panel: #161b22;
+  --card: #21262d;
+  --muted: #8b949e;
+  --text: #e6edf3;
+  --border: #30363d;
+  --accent: #58a6ff;
+  --accent-strong: #1f6feb;
+  --accent-soft: rgba(56, 139, 253, 0.15);
+  --empty: #161b22;
+}
+
+body {
+  color: #e6edf3;
+  background: #0d1117;
+}
+
+body::before {
+  filter: grayscale(1);
+  opacity: 0.035;
+}
+
+.eyebrow,
+.section-kicker {
+  color: #58a6ff;
+}
+
+.brand-mark,
+.onedrive-icon {
+  color: #58a6ff;
+  background: #161b22;
+  border: 1px solid #30363d;
+}
+
+.icon-btn {
+  color: #e6edf3;
+  background: #21262d;
+  border-color: #30363d;
+}
+
+.icon-btn:hover {
+  background: #30363d;
+  border-color: #8b949e;
+}
+
+.onedrive-card {
+  background: rgba(22, 27, 34, 0.78);
+  border-color: #30363d;
+  box-shadow: 0 8px 24px rgba(1, 4, 9, 0.35);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+
+.onedrive-card::before {
+  background: linear-gradient(90deg, transparent, #58a6ff, transparent);
+  opacity: 0.65;
+}
+
+.onedrive-copy p {
+  color: #8b949e;
+}
+
+.onedrive-button {
+  color: #ffffff;
+  background: #238636;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  box-shadow: none;
+}
+
+.onedrive-button:hover {
+  color: #ffffff;
+  background: #2ea043;
+  filter: none;
+}
+
+.schedule-panel {
+  background: rgba(22, 27, 34, 0.78);
+  border-color: #30363d;
+  -webkit-backdrop-filter: blur(22px) saturate(120%);
+  backdrop-filter: blur(22px) saturate(120%);
+  box-shadow: 0 8px 24px rgba(1, 4, 9, 0.32), inset 0 1px 0 rgba(240, 246, 252, 0.04);
+}
+
+.schedule-panel::before {
+  background: linear-gradient(90deg, transparent, rgba(88, 166, 255, 0.8), transparent);
+}
+
+.live-pill {
+  color: #8b949e;
+  background: rgba(13, 17, 23, 0.55);
+  border-color: #30363d;
+}
+
+.live-dot {
+  background: #3fb950;
+  box-shadow: 0 0 8px rgba(63, 185, 80, 0.35);
+}
+
+.tab {
+  color: #c9d1d9;
+  background: #21262d;
+  border-color: #30363d;
+}
+
+.tab:hover {
+  color: #e6edf3;
+  background: #30363d;
+  border-color: #8b949e;
+}
+
+.tab.active {
+  color: #ffffff;
+  background: #1f6feb;
+  border-color: #1f6feb;
+}
+
+.search {
+  color: #8b949e;
+}
+
+.search input {
+  color: #e6edf3;
+  background: #0d1117;
+  border-color: #30363d;
+}
+
+.search input::placeholder {
+  color: #6e7681;
+}
+
+.search input:focus {
+  border-color: #58a6ff;
+  box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.25);
+}
+
+.day-title span,
+.room,
+.empty .subject,
+.empty .room,
+.no-results {
+  color: #8b949e;
+}
+
+.lesson {
+  background: rgba(33, 38, 45, 0.82);
+  border-color: #30363d;
+}
+
+.lesson:hover {
+  background: #262c36;
+  border-color: #58a6ff;
+}
+
+.lesson.empty {
+  background: rgba(22, 27, 34, 0.7);
+  border-color: #30363d;
+}
+
+.time {
+  color: #79c0ff;
+}
+
+.subject {
+  color: #e6edf3;
+}
+
+.badge {
+  color: #79c0ff;
+  background: rgba(56, 139, 253, 0.15);
+  border: 1px solid rgba(56, 139, 253, 0.35);
+}
+
+footer {
+  color: #8b949e;
+  border-top-color: #30363d;
+}
+
+footer strong {
+  color: #c9d1d9;
+}
+
+.onedrive-button:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #58a6ff;
+  outline-offset: 2px;
+}
+
+/* GitHub Light palette for the existing theme toggle. */
+html.light {
+  color-scheme: light;
+  --bg: #f6f8fa;
+  --panel: #ffffff;
+  --card: #f6f8fa;
+  --muted: #59636e;
+  --text: #1f2328;
+  --border: #d1d9e0;
+  --accent: #0969da;
+  --accent-strong: #0550ae;
+  --accent-soft: #ddf4ff;
+  --empty: #f6f8fa;
+}
+
+html.light body {
+  color: #1f2328;
+  background: #f6f8fa;
+}
+
+html.light body::before {
+  opacity: 0.025;
+}
+
+html.light .eyebrow,
+html.light .section-kicker {
+  color: #0969da;
+}
+
+html.light .brand-mark,
+html.light .onedrive-icon {
+  color: #0969da;
+  background: #f6f8fa;
+  border-color: #d1d9e0;
+}
+
+html.light .icon-btn {
+  color: #1f2328;
+  background: #f6f8fa;
+  border-color: #d1d9e0;
+}
+
+html.light .icon-btn:hover {
+  background: #eaeef2;
+  border-color: #afb8c1;
+}
+
+html.light .onedrive-card {
+  background: rgba(255, 255, 255, 0.78);
+  border-color: #d1d9e0;
+  box-shadow: 0 8px 24px rgba(31, 35, 40, 0.08);
+}
+
+html.light .onedrive-card::before {
+  background: linear-gradient(90deg, transparent, #0969da, transparent);
+}
+
+html.light .onedrive-copy p {
+  color: #59636e;
+}
+
+html.light .onedrive-button {
+  color: #ffffff;
+  background: #1f883d;
+  border-color: rgba(31, 35, 40, 0.15);
+}
+
+html.light .onedrive-button:hover {
+  color: #ffffff;
+  background: #1a7f37;
+}
+
+html.light .schedule-panel {
+  background: rgba(255, 255, 255, 0.78);
+  border-color: #d1d9e0;
+  box-shadow: 0 8px 24px rgba(31, 35, 40, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+html.light .schedule-panel::before {
+  background: linear-gradient(90deg, transparent, rgba(9, 105, 218, 0.55), transparent);
+}
+
+html.light .live-pill {
+  color: #59636e;
+  background: rgba(246, 248, 250, 0.85);
+  border-color: #d1d9e0;
+}
+
+html.light .live-dot {
+  background: #1a7f37;
+  box-shadow: none;
+}
+
+html.light .tab {
+  color: #1f2328;
+  background: #f6f8fa;
+  border-color: #d1d9e0;
+}
+
+html.light .tab:hover {
+  color: #1f2328;
+  background: #eaeef2;
+  border-color: #afb8c1;
+}
+
+html.light .tab.active {
+  color: #ffffff;
+  background: #0969da;
+  border-color: #0969da;
+}
+
+html.light .search {
+  color: #59636e;
+}
+
+html.light .search input {
+  color: #1f2328;
+  background: #ffffff;
+  border-color: #d1d9e0;
+}
+
+html.light .search input::placeholder {
+  color: #6e7781;
+}
+
+html.light .search input:focus {
+  border-color: #0969da;
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.15);
+}
+
+html.light .day-title span,
+html.light .room,
+html.light .empty .subject,
+html.light .empty .room,
+html.light .no-results {
+  color: #59636e;
+}
+
+html.light .lesson {
+  color: #1f2328;
+  background: rgba(255, 255, 255, 0.88);
+  border-color: #d1d9e0;
+}
+
+html.light .lesson:hover {
+  background: #f6f8fa;
+  border-color: #0969da;
+}
+
+html.light .lesson.empty {
+  background: rgba(246, 248, 250, 0.8);
+  border-color: #d1d9e0;
+}
+
+html.light .time {
+  color: #0550ae;
+}
+
+html.light .subject {
+  color: #1f2328;
+}
+
+html.light .badge {
+  color: #0550ae;
+  background: #ddf4ff;
+  border-color: #b6e3ff;
+}
+
+html.light footer {
+  color: #59636e;
+  border-top-color: #d1d9e0;
+}
+
+html.light footer strong {
+  color: #1f2328;
+}
+
+html.light .onedrive-button:focus-visible,
+html.light button:focus-visible,
+html.light input:focus-visible {
+  outline-color: #0969da;
+}
+
